@@ -3,7 +3,6 @@ package com.test.tarifas.application;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.tarifas.domain.Price;
@@ -13,8 +12,11 @@ import com.test.tarifas.infrastructure.PriceRepository;
 @Service
 public class PriceServiceImpl implements PriceService {
 	
-	@Autowired 
-	private PriceRepository priceRepository;
+	private final PriceRepository priceRepository;
+
+	public PriceServiceImpl(PriceRepository priceRepository) {
+		this.priceRepository = priceRepository;
+	}
 
 	@Override
 	public PriceDTO getPrice(Long brandId, Long productId, LocalDateTime fechaAplicacion) {

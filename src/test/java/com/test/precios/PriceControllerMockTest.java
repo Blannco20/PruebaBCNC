@@ -24,7 +24,7 @@ import com.test.tarifas.infrastructure.PriceController;
 
 
 @ExtendWith(MockitoExtension.class)
-public class PriceControllerMockTest {
+class PriceControllerMockTest {
 	
 	@InjectMocks
 	private PriceController priceController;

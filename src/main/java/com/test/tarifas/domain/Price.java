@@ -18,7 +18,7 @@ public class Price {
     private LocalDateTime endDate;
     private Long productId;
     private Integer priority;
-    private Double price;
+    private Double amount;
     private String curr;
     
     
@@ -58,11 +58,11 @@ public class Price {
 	public void setPriority(Integer priority) {
 		this.priority = priority;
 	}
-	public Double getPrice() {
-		return price;
+	public Double getAmount() {
+		return amount;
 	}
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setAmount(Double amount) {
+		this.amount = amount;
 	}
 	public String getCurr() {
 		return curr;

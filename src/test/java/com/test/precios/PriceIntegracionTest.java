@@ -8,13 +8,15 @@ import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.test.tarifas.PruebaBcncApplication;
 import com.test.tarifas.domain.PriceDTO;
 import com.test.tarifas.infrastructure.PriceController;
 
 @SpringBootTest(classes = PruebaBcncApplication.class)
-public class PriceTestReal {
+@Transactional
+ class PriceIntegracionTest {
 
     @Autowired
     private PriceController priceController;
@@ -22,7 +24,7 @@ public class PriceTestReal {
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     @Test
-    public void test1() {
+     void test1() {
     	 LocalDateTime fechaAplicacion= LocalDateTime.parse("2020-06-14 10:00:00", formatter);
        
         PriceDTO response = priceController.getPrice(1L, 35455L, fechaAplicacion);
@@ -34,7 +36,7 @@ public class PriceTestReal {
     }
     
     @Test
-    public void test2() {
+     void test2() {
     	 LocalDateTime fechaAplicacion= LocalDateTime.parse("2020-06-14 16:00:00", formatter);
        
         PriceDTO response = priceController.getPrice(1L, 35455L, fechaAplicacion);
@@ -46,7 +48,7 @@ public class PriceTestReal {
     }
     
     @Test
-    public void test3() {
+     void test3() {
     	 LocalDateTime fechaAplicacion= LocalDateTime.parse("2020-06-14 21:00:00", formatter);
        
         PriceDTO response = priceController.getPrice(1L, 35455L, fechaAplicacion);
@@ -58,7 +60,7 @@ public class PriceTestReal {
     }
     
     @Test
-    public void test4() {
+     void test4() {
     	 LocalDateTime fechaAplicacion= LocalDateTime.parse("2020-06-15 10:00:00", formatter);
        
         PriceDTO response = priceController.getPrice(1L, 35455L, fechaAplicacion);
@@ -70,7 +72,7 @@ public class PriceTestReal {
     }
     
     @Test
-    public void test5() {
+     void test5() {
     	 LocalDateTime fechaAplicacion= LocalDateTime.parse("2020-06-16 21:00:00", formatter);
        
         PriceDTO response = priceController.getPrice(1L, 35455L, fechaAplicacion);

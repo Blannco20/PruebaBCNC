@@ -4,6 +4,11 @@ import com.test.tarifas.domain.Price;
 import com.test.tarifas.domain.PriceDTO;
 
 public class PriceMapper {
+	
+	private PriceMapper() {
+        throw new UnsupportedOperationException("No puedes instanciar el mapper");
+    }
+
 
     public static PriceDTO toPriceDTO(Price price) {
         return new PriceDTO(
@@ -12,7 +17,7 @@ public class PriceMapper {
                 price.getStartDate(),
                 price.getEndDate(),
                 price.getProductId(),
-                price.getPrice(),
+                price.getAmount(),
                 price.getCurr()
         );
     }
